@@ -32,7 +32,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "::ng-deep .ls--logo {\n  width: 55px; }\n\n::ng-deep .display-center-flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n::ng-deep .padding--0 {\n  padding: 0px; }\n\n::ng-deep .ls-pages {\n  margin-top: 82px;\n  margin: 97px; }\n", ""]);
+exports.push([module.i, "::ng-deep .ls--logo {\n  width: 55px; }\n\n::ng-deep .display-center-flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n::ng-deep .padding--0 {\n  padding: 0px; }\n\n::ng-deep .ls-pages {\n  margin-top: 82px;\n  margin: 97px; }\n\n::ng-deep .border-none {\n  border: none; }\n", ""]);
 
 // exports
 
@@ -78,14 +78,15 @@ AppComponent = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__("../../../../../src/app/app.routes.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_catalog_catalog_module__ = __webpack_require__("../../../../../src/app/pages/catalog/catalog.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_course_detail_course_detail_module__ = __webpack_require__("../../../../../src/app/pages/course-detail/course-detail.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routes__ = __webpack_require__("../../../../../src/app/app.routes.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_catalog_catalog_module__ = __webpack_require__("../../../../../src/app/pages/catalog/catalog.module.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -100,25 +101,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["M" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__components_header_header_component__["a" /* HeaderComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__components_footer_footer_component__["a" /* FooterComponent */]
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__components_header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__components_footer_footer_component__["a" /* FooterComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_catalog_catalog_module__["a" /* CatalogModule */],
-            __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_4__app_routes__["a" /* appRoutes */])
+            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_8__pages_catalog_catalog_module__["a" /* CatalogModule */],
+            __WEBPACK_IMPORTED_MODULE_0__pages_course_detail_course_detail_module__["a" /* CourseDetailModule */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_routes__["a" /* appRoutes */])
         ],
         providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -131,7 +134,9 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return appRoutes; });
-var appRoutes = [];
+var appRoutes = [
+    { path: '', redirectTo: '/catalog', pathMatch: 'full' },
+];
 //# sourceMappingURL=app.routes.js.map
 
 /***/ }),
@@ -261,7 +266,7 @@ HeaderComponent = __decorate([
 /***/ "../../../../../src/app/pages/catalog/catalog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"ls-pages catalog-page\">\n<div class=\"row\">\n  <div class=\"col-sm-3\">\n    <app-ls-side-menu></app-ls-side-menu>\n  </div>\n<div class=\"col-sm-7\">\n    <app-ls-course-list></app-ls-course-list>\n</div>\n</div>\n\n</div>"
+module.exports = "<div class = \"ls-pages catalog-page\">\n<div class=\"row\">\n  <div class=\"col-sm-3\">\n    <app-ls-side-menu></app-ls-side-menu>\n  </div>\n<div class=\"col-sm-7\">\n    <app-ls-course-list></app-ls-course-list>\n</div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -354,7 +359,7 @@ CatalogModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["M" /* NgModule */])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_4__angular_common__["b" /* CommonModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forChild(routes)
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forChild(routes)
         ],
         declarations: [__WEBPACK_IMPORTED_MODULE_5__catalog_component__["a" /* CatalogComponent */],
             __WEBPACK_IMPORTED_MODULE_1__side_menu_side_menu_component__["a" /* SideMenuComponent */],
@@ -369,7 +374,7 @@ CatalogModule = __decorate([
 /***/ "../../../../../src/app/pages/catalog/course-list/course-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"course-list-container\">\n<div class=\"card text-center course\">\n    <div class=\"card-header\">\n      Tree\n    </div>\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">Tree</h4>\n      <p class=\"card-text\">Learn tree the easy way</p>\n      <a href=\"#\" class=\"btn btn-primary\">View videos</a>\n    </div>\n    <div class=\"card-footer text-muted\">\n      2 days ago\n    </div>\n  </div>\n\n  <div class=\"card text-center course\">\n      <div class=\"card-header\">\n        Array\n      </div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Excercise based on array</h4>\n        <p class=\"card-text\">Learn advance problems in array</p>\n        <a href=\"#\" class=\"btn btn-primary\">View videos</a>\n      </div>\n      <div class=\"card-footer text-muted\">\n        2 days ago\n      </div>\n    </div>\n</div>"
+module.exports = "<div class = \"course-list-container\">\n<div class=\"card text-center course\">\n    <div class=\"card-header\">\n      Tree\n    </div>\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">Tree</h4>\n      <p class=\"card-text\">Learn tree the easy way</p>\n      <a routerLink=\"/course-detail/1\" class=\"btn btn-primary\">View videos</a>\n    </div>\n    <div class=\"card-footer text-muted\">\n      2 days ago\n    </div>\n  </div>\n\n  <div class=\"card text-center course\">\n      <div class=\"card-header\">\n        Array\n      </div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Excercise based on array</h4>\n        <p class=\"card-text\">Learn advance problems in array</p>\n        <a routerLink=\"/course-detail/2\" class=\"btn btn-primary\">View videos</a>\n      </div>\n      <div class=\"card-footer text-muted\">\n        2 days ago\n      </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -485,6 +490,216 @@ SideMenuComponent = __decorate([
 ], SideMenuComponent);
 
 //# sourceMappingURL=side-menu.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/course-detail/course-detail.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class = \"ls-pages course-detail-page\">\n<div class= \"row\">\n  <div class = \"col-sm-3\">\n    <app-ls-section-list></app-ls-section-list>\n  </div>\n  <div class = \"col-sm-8\">\n      <iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/0Arkbqpr-9Q?ecver=1\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>\n      </div>\n</div>\n\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/course-detail/course-detail.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/course-detail/course-detail.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourseDetailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CourseDetailComponent = (function () {
+    function CourseDetailComponent(route) {
+        this.route = route;
+        this.courseId = 0;
+    }
+    CourseDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            _this.courseId = params['courseId'];
+            console.log(_this.courseId);
+        });
+    };
+    return CourseDetailComponent;
+}());
+CourseDetailComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* Component */])({
+        selector: 'app-course-detail',
+        template: __webpack_require__("../../../../../src/app/pages/course-detail/course-detail.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/course-detail/course-detail.component.scss")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object])
+], CourseDetailComponent);
+
+var _a;
+//# sourceMappingURL=course-detail.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/course-detail/course-detail.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourseDetailModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__course_detail_component__ = __webpack_require__("../../../../../src/app/pages/course-detail/course-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__section_list_section_list_component__ = __webpack_require__("../../../../../src/app/pages/course-detail/section-list/section-list.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var routes = [
+    { path: 'course-detail/:courseId', component: __WEBPACK_IMPORTED_MODULE_3__course_detail_component__["a" /* CourseDetailComponent */] }
+];
+var CourseDetailModule = (function () {
+    function CourseDetailModule() {
+    }
+    return CourseDetailModule;
+}());
+CourseDetailModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forChild(routes)
+        ],
+        declarations: [__WEBPACK_IMPORTED_MODULE_3__course_detail_component__["a" /* CourseDetailComponent */], __WEBPACK_IMPORTED_MODULE_4__section_list_section_list_component__["a" /* SectionListComponent */]]
+    })
+], CourseDetailModule);
+
+//# sourceMappingURL=course-detail.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/course-detail/section-list/section-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<ul class=\"list-group\">\n    <li class=\"list-group-item\" (click) =\"toogleCurrentView()\">Binary Search Tree\n        <ul class=\"list-group testing\" *ngIf=\"show\">\n            <li class=\"list-group-item border-none\">Search and Insertion</li>\n            <li class=\"list-group-item border-none\">Sorted Array to Balanced BST</li>\n            <li class=\"list-group-item border-none\">Second largest element in BST</li>\n          </ul>\n    </li>\n    <li class=\"list-group-item\">Dapibus ac facilisis in</li>\n    <li class=\"list-group-item\">Morbi leo risus</li>\n    <li class=\"list-group-item\">Porta ac consectetur ac</li>\n    <li class=\"list-group-item\">Vestibulum at eros</li>\n  </ul>\n\n\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/course-detail/section-list/section-list.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".testing {\n  position: relative;\n  left: -250px; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/course-detail/section-list/section-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SectionListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_animejs__ = __webpack_require__("../../../../animejs/anime.min.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_animejs__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SectionListComponent = (function () {
+    function SectionListComponent() {
+        this.show = false;
+    }
+    SectionListComponent.prototype.ngOnInit = function () {
+    };
+    SectionListComponent.prototype.toogleCurrentView = function () {
+        var _this = this;
+        if (this.show) {
+            __WEBPACK_IMPORTED_MODULE_1_animejs___default()({
+                targets: '.border-none',
+                translateX: -100,
+                direction: 'alternate',
+                loop: false,
+                elasticity: function (el, i, l) {
+                    return (200 + i * 200);
+                }
+            });
+            setTimeout(function () {
+                _this.show = false;
+            }, 500);
+        }
+        else {
+            this.show = true;
+            setTimeout(function () {
+                __WEBPACK_IMPORTED_MODULE_1_animejs___default()({
+                    targets: '.border-none',
+                    translateX: 250,
+                    direction: 'alternate',
+                    loop: false,
+                    elasticity: function (el, i, l) {
+                        return (200 + i * 200);
+                    }
+                });
+            }, 0);
+        }
+    };
+    return SectionListComponent;
+}());
+SectionListComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-ls-section-list',
+        template: __webpack_require__("../../../../../src/app/pages/course-detail/section-list/section-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/course-detail/section-list/section-list.component.scss")]
+    }),
+    __metadata("design:paramtypes", [])
+], SectionListComponent);
+
+//# sourceMappingURL=section-list.component.js.map
 
 /***/ }),
 
