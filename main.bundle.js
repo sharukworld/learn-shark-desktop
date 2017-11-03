@@ -134,8 +134,11 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return appRoutes; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_catalog_catalog_component__ = __webpack_require__("../../../../../src/app/pages/catalog/catalog.component.ts");
+
 var appRoutes = [
     { path: '', redirectTo: '/catalog', pathMatch: 'full' },
+    { path: 'catalog', component: __WEBPACK_IMPORTED_MODULE_0__pages_catalog_catalog_component__["a" /* CatalogComponent */] }
 ];
 //# sourceMappingURL=app.routes.js.map
 
