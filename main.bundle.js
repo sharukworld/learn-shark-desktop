@@ -32,7 +32,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "::ng-deep .ls--logo {\n  width: 55px; }\n\n::ng-deep .display-center-flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n::ng-deep .padding--0 {\n  padding: 0px; }\n\n::ng-deep .ls-pages {\n  margin-top: 82px;\n  margin: 97px; }\n\n::ng-deep .border-none {\n  border: none; }\n", ""]);
+exports.push([module.i, "::ng-deep .ls--logo {\n  width: 55px; }\n\n::ng-deep .display-center-flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n::ng-deep .padding--0 {\n  padding: 0px; }\n\n::ng-deep .ls-pages {\n  margin-top: 82px;\n  margin: 97px; }\n\n::ng-deep .border-none {\n  border: none; }\n\n::ng-deep .ls-list-active {\n  background-color: #f0f8ff; }\n\n::ng-deep .pointer-cursor {\n  cursor: pointer; }\n\n::ng-deep .ls-list--item--active {\n  background-color: #6f86c6;\n  z-index: 2;\n  color: #fff;\n  border-color: #6f86c6; }\n\n::ng-deep .list-group-item {\n  outline: none; }\n", ""]);
 
 // exports
 
@@ -147,7 +147,7 @@ var appRoutes = [
 /***/ "../../../../../src/app/components/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<nav class=\"navbar fixed-bottom navbar-light bg-light\">\n    <a class=\"navbar-brand logo\" href=\"#\">Learn<span>Shark</span></a>\n    <a><i class=\"fa fa-linkedin-square fa-3x\" aria-hidden=\"true\"></i>\n        <i class=\"fa fa-facebook-square fa-3x\" aria-hidden=\"true\"></i>\n        <i class=\"fa fa-twitter-square fa-3x\" aria-hidden=\"true\"></i>\n      </a>\n  </nav>"
+module.exports = "\n<nav class=\"navbar fixed-bottom navbar-light bg-light\">\n    <a class=\"navbar-brand logo\" href=\"#\">Coach<span>Shark</span></a>\n    <a><i class=\"fa fa-linkedin-square fa-3x\" aria-hidden=\"true\"></i>\n        <i class=\"fa fa-facebook-square fa-3x\" aria-hidden=\"true\"></i>\n        <i class=\"fa fa-twitter-square fa-3x\" aria-hidden=\"true\"></i>\n      </a>\n  </nav>"
 
 /***/ }),
 
@@ -377,7 +377,7 @@ CatalogModule = __decorate([
 /***/ "../../../../../src/app/pages/catalog/course-list/course-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"course-list-container\">\n<div class=\"card text-center course\">\n    <div class=\"card-header\">\n      Tree\n    </div>\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">Tree</h4>\n      <p class=\"card-text\">Learn tree the easy way</p>\n      <a routerLink=\"/course-detail/1\" class=\"btn btn-primary\">View videos</a>\n    </div>\n    <div class=\"card-footer text-muted\">\n      2 days ago\n    </div>\n  </div>\n\n  <div class=\"card text-center course\">\n      <div class=\"card-header\">\n        Array\n      </div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Excercise based on array</h4>\n        <p class=\"card-text\">Learn advance problems in array</p>\n        <a routerLink=\"/course-detail/2\" class=\"btn btn-primary\">View videos</a>\n      </div>\n      <div class=\"card-footer text-muted\">\n        2 days ago\n      </div>\n    </div>\n</div>"
+module.exports = "<div class = \"course-list-container\">\n<div class=\"card text-center course\">\n    <div class=\"card-header\">\n      Tree\n    </div>\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">Tree</h4>\n      <p class=\"card-text\">Learn tree the easy way</p>\n      <a routerLink=\"/course-detail/1/0/0\" class=\"btn btn-primary\">View videos</a>\n    </div>\n    <div class=\"card-footer text-muted\">\n      2 days ago\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -438,7 +438,7 @@ CourseListComponent = __decorate([
 /***/ "../../../../../src/app/pages/catalog/side-menu/side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "    <div class=\"card side-menu\">\n        <div class=\"card-block\">\n          <h4 class=\"card-title text--pading\">Courses</h4>\n        </div>\n        <ul class=\"list-group list-group-flush\">\n          <li class=\"list-group-item\">Data Structure</li>\n          <li class=\"list-group-item\">Algorithms</li>\n        </ul>\n      </div>"
+module.exports = "    <div class=\"card side-menu\">\n        <div class=\"card-block\">\n          <h4 class=\"card-title text--pading\">Courses</h4>\n        </div>\n        <ul class=\"list-group list-group-flush\">\n          <li class=\"list-group-item\">Data Structure</li>\n        </ul>\n      </div>"
 
 /***/ }),
 
@@ -499,7 +499,7 @@ SideMenuComponent = __decorate([
 /***/ "../../../../../src/app/pages/course-detail/course-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"ls-pages course-detail-page\">\n<div class= \"row\">\n  <div class = \"col-sm-3\">\n    <app-ls-section-list></app-ls-section-list>\n  </div>\n  <div class = \"col-sm-8\">\n      <iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/0Arkbqpr-9Q?ecver=1\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>\n      </div>\n</div>\n\n</div>"
+module.exports = "<div class = \"ls-pages course-detail-page\">\n<div class= \"row\">\n  <div class = \"col-sm-3\">\n    <app-ls-section-list [currentSection] = \"sectionId\" [currentVideo] = \"videoId\"></app-ls-section-list>\n  </div>\n  <div class = \"col-sm-8\">\n      <iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/0Arkbqpr-9Q?ecver=1&rel=0\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>\n      </div>\n</div>\n\n</div>"
 
 /***/ }),
 
@@ -543,12 +543,15 @@ var CourseDetailComponent = (function () {
     function CourseDetailComponent(route) {
         this.route = route;
         this.courseId = 0;
+        this.sectionId = 0;
+        this.videoId = 0;
     }
     CourseDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
             _this.courseId = params['courseId'];
-            console.log(_this.courseId);
+            _this.sectionId = params['sectionId'];
+            _this.videoId = params['videoId'];
         });
     };
     return CourseDetailComponent;
@@ -589,7 +592,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 var routes = [
-    { path: 'course-detail/:courseId', component: __WEBPACK_IMPORTED_MODULE_3__course_detail_component__["a" /* CourseDetailComponent */] }
+    { path: 'course-detail/:courseId/:sectionId/:videoId', component: __WEBPACK_IMPORTED_MODULE_3__course_detail_component__["a" /* CourseDetailComponent */] }
 ];
 var CourseDetailModule = (function () {
     function CourseDetailModule() {
@@ -613,7 +616,7 @@ CourseDetailModule = __decorate([
 /***/ "../../../../../src/app/pages/course-detail/section-list/section-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"list-group\">\n    <li class=\"list-group-item\" (click) =\"toogleCurrentView()\">Binary Search Tree\n        <ul class=\"list-group testing\" *ngIf=\"show\">\n            <li class=\"list-group-item border-none\">Search and Insertion</li>\n            <li class=\"list-group-item border-none\">Sorted Array to Balanced BST</li>\n            <li class=\"list-group-item border-none\">Second largest element in BST</li>\n          </ul>\n    </li>\n    <li class=\"list-group-item\">Dapibus ac facilisis in</li>\n    <li class=\"list-group-item\">Morbi leo risus</li>\n    <li class=\"list-group-item\">Porta ac consectetur ac</li>\n    <li class=\"list-group-item\">Vestibulum at eros</li>\n  </ul>\n\n\n"
+module.exports = "<ul class=\"list-group pointer-cursor\">\n    <li class=\"list-group-item ls-list-active\">Binary Search Tree  </li>\n            <li class=\"list-group-item\" [class.ls-list--item--active] = \"currentVideo === '0'\"  routerLink=\"/course-detail/1/0/0\" >Search and Insertion</li>\n            <li class=\"list-group-item\" [class.ls-list--item--active] = \"currentVideo === '1'\"  routerLink=\"/course-detail/1/0/1\" >Sorted Array to Balanced BST</li>\n            <li class=\"list-group-item\" [class.ls-list--item--active] = \"currentVideo === '2'\"  routerLink=\"/course-detail/1/0/2\" >Second largest element in BST</li>\n  </ul>\n\n\n"
 
 /***/ }),
 
@@ -625,7 +628,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".testing {\n  position: relative;\n  left: -250px; }\n", ""]);
+exports.push([module.i, ".testing {\n  position: relative;\n  left: -250px; }\n\n@-webkit-keyframes pulse {\n  from {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); }\n  50% {\n    -webkit-transform: scale3d(1.05, 1.05, 1.05);\n            transform: scale3d(1.05, 1.05, 1.05); }\n  to {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); } }\n\n@keyframes pulse {\n  from {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); }\n  50% {\n    -webkit-transform: scale3d(1.05, 1.05, 1.05);\n            transform: scale3d(1.05, 1.05, 1.05); }\n  to {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); } }\n\n.pulse {\n  -webkit-animation-name: pulse;\n          animation-name: pulse; }\n", ""]);
 
 // exports
 
@@ -657,9 +660,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var SectionListComponent = (function () {
     function SectionListComponent() {
         this.show = false;
+        this.currentSection = 0;
+        this.currentVideo = 0;
     }
     SectionListComponent.prototype.ngOnInit = function () {
     };
+    // animate( currentEle) {
+    //   setTimeout( () => {
+    //     anime({
+    //       targets: '.' + currentEle,
+    //       scale: 1.1,
+    //       direction: 'alternate',
+    //       duration: 500,
+    //       loop: 2,
+    //       backgroundColor: ['white', 'black'],
+    //       elasticity: function(el, i, l) {
+    //         return (200 + i * 200);
+    //       }
+    //     });
+    //   }, 0);
+    // }
     SectionListComponent.prototype.toogleCurrentView = function () {
         var _this = this;
         if (this.show) {
@@ -693,6 +713,14 @@ var SectionListComponent = (function () {
     };
     return SectionListComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], SectionListComponent.prototype, "currentSection", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], SectionListComponent.prototype, "currentVideo", void 0);
 SectionListComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-ls-section-list',
