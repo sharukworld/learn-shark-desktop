@@ -208,7 +208,7 @@ FooterComponent = __decorate([
 /***/ "../../../../../src/app/components/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand navbar-light fixed-top bg-light\">\n    <div class=\"nav navbar-nav display-center-flex\">\n      <a class=\"nav-item nav-link  padding--0\"> <img src = \"assets/images/learn-shark.svg\" class= \"ls--logo\"> </a>\n        <a class=\"nav-item nav-link active\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>\n        <a class=\"nav-item nav-link\" href=\"#\">About Us</a>\n    </div>\n</nav>\n\n\n  "
+module.exports = "<nav class=\"navbar navbar-expand navbar-light fixed-top bg-light\">\n    <div class=\"nav navbar-nav display-center-flex\">\n      <a class=\"nav-item nav-link  padding--0\"> <img src = \"assets/images/learn-shark.svg\" class= \"ls--logo\"> </a>\n        <a class=\"nav-item nav-link active\" href=\"#\">Home<span class=\"sr-only\">(current)</span></a>\n        <a class=\"nav-item nav-link\" href=\"#\">About Us</a>\n    </div>\n</nav>\n\n\n  "
 
 /***/ }),
 
