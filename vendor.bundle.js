@@ -126,6 +126,127 @@ function toComment(sourceMap) {
 
 /***/ }),
 
+/***/ "../../../../easy-ngx-google-analytics/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_easy_ngx_google_analytics_module__ = __webpack_require__("../../../../easy-ngx-google-analytics/src/easy-ngx-google-analytics.module.js");
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_easy_ngx_google_analytics_module__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_easy_analytics_config__ = __webpack_require__("../../../../easy-ngx-google-analytics/src/easy-analytics.config.js");
+/* unused harmony reexport EasyAnalyticsConfig */
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../../../../easy-ngx-google-analytics/src/easy-analytics.config.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export EasyAnalyticsConfig */
+var EasyAnalyticsConfig = /** @class */ (function () {
+    function EasyAnalyticsConfig() {
+    }
+    return EasyAnalyticsConfig;
+}());
+
+//# sourceMappingURL=easy-analytics.config.js.map
+
+/***/ }),
+
+/***/ "../../../../easy-ngx-google-analytics/src/easy-ngx-google-analytics.component.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EasyNgxGoogleAnalyticsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/distinctUntilChanged.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_filter__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/filter.js");
+
+
+
+
+var EasyNgxGoogleAnalyticsComponent = /** @class */ (function () {
+    function EasyNgxGoogleAnalyticsComponent(router) {
+        var _this = this;
+        this.router = router;
+        router.events.distinctUntilChanged(function (previous, current) {
+            if (current instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationEnd */]) {
+                return previous.url === current.url;
+            }
+            return true;
+        }).filter(function (x) {
+            if (_this.config.routesToIgnore == null) {
+                return true;
+            }
+            else {
+                for (var routesIndex = 0; routesIndex < _this.config.routesToIgnore.length; routesIndex++) {
+                    var routeIgnore = _this.config.routesToIgnore[routesIndex].test(x.url);
+                    if (routeIgnore) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        })
+            .subscribe(function (x) {
+            var finalUrl = (_this.config.urlTrimmerFunction != null) ? (_this.config.urlTrimmerFunction(x.url)) : x.url;
+            gtag('config', _this.config.gaTrackingId, { 'page_path': finalUrl });
+        });
+    }
+    EasyNgxGoogleAnalyticsComponent.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */], args: [{
+                    selector: 'easy-ngx-google-analytics',
+                    template: ''
+                },] },
+    ];
+    /** @nocollapse */
+    EasyNgxGoogleAnalyticsComponent.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* Router */], },
+    ]; };
+    EasyNgxGoogleAnalyticsComponent.propDecorators = {
+        'config': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */] },],
+    };
+    return EasyNgxGoogleAnalyticsComponent;
+}());
+
+//# sourceMappingURL=easy-ngx-google-analytics.component.js.map
+
+/***/ }),
+
+/***/ "../../../../easy-ngx-google-analytics/src/easy-ngx-google-analytics.module.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EasyNgxGoogleAnalyticsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__easy_ngx_google_analytics_component__ = __webpack_require__("../../../../easy-ngx-google-analytics/src/easy-ngx-google-analytics.component.js");
+
+
+var EasyNgxGoogleAnalyticsModule = /** @class */ (function () {
+    function EasyNgxGoogleAnalyticsModule() {
+    }
+    EasyNgxGoogleAnalyticsModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */], args: [{
+                    declarations: [
+                        __WEBPACK_IMPORTED_MODULE_1__easy_ngx_google_analytics_component__["a" /* EasyNgxGoogleAnalyticsComponent */],
+                    ],
+                    exports: [
+                        __WEBPACK_IMPORTED_MODULE_1__easy_ngx_google_analytics_component__["a" /* EasyNgxGoogleAnalyticsComponent */],
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    EasyNgxGoogleAnalyticsModule.ctorParameters = function () { return []; };
+    return EasyNgxGoogleAnalyticsModule;
+}());
+
+//# sourceMappingURL=easy-ngx-google-analytics.module.js.map
+
+/***/ }),
+
 /***/ "../../../../rxjs/_esm5/BehaviorSubject.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1465,6 +1586,36 @@ function flattenUnsubscriptionErrors(errors) {
 
 /***/ }),
 
+/***/ "../../../../rxjs/_esm5/add/operator/distinctUntilChanged.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/_esm5/operator/distinctUntilChanged.js");
+/** PURE_IMPORTS_START .._.._Observable,.._.._operator_distinctUntilChanged PURE_IMPORTS_END */
+
+
+__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.distinctUntilChanged = __WEBPACK_IMPORTED_MODULE_1__operator_distinctUntilChanged__["a" /* distinctUntilChanged */];
+//# sourceMappingURL=distinctUntilChanged.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/add/operator/filter.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_filter__ = __webpack_require__("../../../../rxjs/_esm5/operator/filter.js");
+/** PURE_IMPORTS_START .._.._Observable,.._.._operator_filter PURE_IMPORTS_END */
+
+
+__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.filter = __WEBPACK_IMPORTED_MODULE_1__operator_filter__["a" /* filter */];
+//# sourceMappingURL=filter.js.map 
+
+
+/***/ }),
+
 /***/ "../../../../rxjs/_esm5/observable/ArrayLikeObservable.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2763,6 +2914,62 @@ function concatMap(project, resultSelector) {
 
 /***/ }),
 
+/***/ "../../../../rxjs/_esm5/operator/distinctUntilChanged.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = distinctUntilChanged;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/_esm5/operators/distinctUntilChanged.js");
+/** PURE_IMPORTS_START .._operators_distinctUntilChanged PURE_IMPORTS_END */
+
+/* tslint:enable:max-line-length */
+/**
+ * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
+ *
+ * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
+ *
+ * If a comparator function is not provided, an equality check is used by default.
+ *
+ * @example <caption>A simple example with numbers</caption>
+ * Observable.of(1, 1, 2, 2, 2, 1, 1, 2, 3, 3, 4)
+ *   .distinctUntilChanged()
+ *   .subscribe(x => console.log(x)); // 1, 2, 1, 2, 3, 4
+ *
+ * @example <caption>An example using a compare function</caption>
+ * interface Person {
+ *    age: number,
+ *    name: string
+ * }
+ *
+ * Observable.of<Person>(
+ *     { age: 4, name: 'Foo'},
+ *     { age: 7, name: 'Bar'},
+ *     { age: 5, name: 'Foo'})
+ *     { age: 6, name: 'Foo'})
+ *     .distinctUntilChanged((p: Person, q: Person) => p.name === q.name)
+ *     .subscribe(x => console.log(x));
+ *
+ * // displays:
+ * // { age: 4, name: 'Foo' }
+ * // { age: 7, name: 'Bar' }
+ * // { age: 5, name: 'Foo' }
+ *
+ * @see {@link distinct}
+ * @see {@link distinctUntilKeyChanged}
+ *
+ * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
+ * @return {Observable} An Observable that emits items from the source Observable with distinct values.
+ * @method distinctUntilChanged
+ * @owner Observable
+ */
+function distinctUntilChanged(compare, keySelector) {
+    return Object(__WEBPACK_IMPORTED_MODULE_0__operators_distinctUntilChanged__["a" /* distinctUntilChanged */])(compare, keySelector)(this);
+}
+//# sourceMappingURL=distinctUntilChanged.js.map 
+
+
+/***/ }),
+
 /***/ "../../../../rxjs/_esm5/operator/every.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3663,6 +3870,127 @@ var DefaultIfEmptySubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
     return DefaultIfEmptySubscriber;
 }(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
 //# sourceMappingURL=defaultIfEmpty.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operators/distinctUntilChanged.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = distinctUntilChanged;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Subscriber__ = __webpack_require__("../../../../rxjs/_esm5/Subscriber.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_tryCatch__ = __webpack_require__("../../../../rxjs/_esm5/util/tryCatch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_errorObject__ = __webpack_require__("../../../../rxjs/_esm5/util/errorObject.js");
+/** PURE_IMPORTS_START .._Subscriber,.._util_tryCatch,.._util_errorObject PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+/* tslint:enable:max-line-length */
+/**
+ * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
+ *
+ * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
+ *
+ * If a comparator function is not provided, an equality check is used by default.
+ *
+ * @example <caption>A simple example with numbers</caption>
+ * Observable.of(1, 1, 2, 2, 2, 1, 1, 2, 3, 3, 4)
+ *   .distinctUntilChanged()
+ *   .subscribe(x => console.log(x)); // 1, 2, 1, 2, 3, 4
+ *
+ * @example <caption>An example using a compare function</caption>
+ * interface Person {
+ *    age: number,
+ *    name: string
+ * }
+ *
+ * Observable.of<Person>(
+ *     { age: 4, name: 'Foo'},
+ *     { age: 7, name: 'Bar'},
+ *     { age: 5, name: 'Foo'})
+ *     { age: 6, name: 'Foo'})
+ *     .distinctUntilChanged((p: Person, q: Person) => p.name === q.name)
+ *     .subscribe(x => console.log(x));
+ *
+ * // displays:
+ * // { age: 4, name: 'Foo' }
+ * // { age: 7, name: 'Bar' }
+ * // { age: 5, name: 'Foo' }
+ *
+ * @see {@link distinct}
+ * @see {@link distinctUntilKeyChanged}
+ *
+ * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
+ * @return {Observable} An Observable that emits items from the source Observable with distinct values.
+ * @method distinctUntilChanged
+ * @owner Observable
+ */
+function distinctUntilChanged(compare, keySelector) {
+    return function (source) { return source.lift(new DistinctUntilChangedOperator(compare, keySelector)); };
+}
+var DistinctUntilChangedOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
+    function DistinctUntilChangedOperator(compare, keySelector) {
+        this.compare = compare;
+        this.keySelector = keySelector;
+    }
+    DistinctUntilChangedOperator.prototype.call = function (subscriber, source) {
+        return source.subscribe(new DistinctUntilChangedSubscriber(subscriber, this.compare, this.keySelector));
+    };
+    return DistinctUntilChangedOperator;
+}());
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var DistinctUntilChangedSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(DistinctUntilChangedSubscriber, _super);
+    function DistinctUntilChangedSubscriber(destination, compare, keySelector) {
+        _super.call(this, destination);
+        this.keySelector = keySelector;
+        this.hasKey = false;
+        if (typeof compare === 'function') {
+            this.compare = compare;
+        }
+    }
+    DistinctUntilChangedSubscriber.prototype.compare = function (x, y) {
+        return x === y;
+    };
+    DistinctUntilChangedSubscriber.prototype._next = function (value) {
+        var keySelector = this.keySelector;
+        var key = value;
+        if (keySelector) {
+            key = Object(__WEBPACK_IMPORTED_MODULE_1__util_tryCatch__["a" /* tryCatch */])(this.keySelector)(value);
+            if (key === __WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */]) {
+                return this.destination.error(__WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */].e);
+            }
+        }
+        var result = false;
+        if (this.hasKey) {
+            result = Object(__WEBPACK_IMPORTED_MODULE_1__util_tryCatch__["a" /* tryCatch */])(this.compare)(this.key, key);
+            if (result === __WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */]) {
+                return this.destination.error(__WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */].e);
+            }
+        }
+        else {
+            this.hasKey = true;
+        }
+        if (Boolean(result) === false) {
+            this.key = key;
+            this.destination.next(value);
+        }
+    };
+    return DistinctUntilChangedSubscriber;
+}(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
+//# sourceMappingURL=distinctUntilChanged.js.map 
 
 
 /***/ }),
@@ -57770,7 +58098,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version *
 /* unused harmony export GuardsCheckEnd */
 /* unused harmony export GuardsCheckStart */
 /* unused harmony export NavigationCancel */
-/* unused harmony export NavigationEnd */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NavigationEnd; });
 /* unused harmony export NavigationError */
 /* unused harmony export NavigationStart */
 /* unused harmony export ResolveEnd */
@@ -57779,11 +58107,11 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["_15" /* Version *
 /* unused harmony export RouteConfigLoadStart */
 /* unused harmony export RoutesRecognized */
 /* unused harmony export RouteReuseStrategy */
-/* unused harmony export Router */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Router; });
 /* unused harmony export ROUTES */
 /* unused harmony export ROUTER_CONFIGURATION */
 /* unused harmony export ROUTER_INITIALIZER */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return RouterModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RouterModule; });
 /* unused harmony export provideRoutes */
 /* unused harmony export ChildrenOutletContexts */
 /* unused harmony export OutletContext */
