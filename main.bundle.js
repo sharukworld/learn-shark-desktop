@@ -153,7 +153,7 @@ var appRoutes = [
 /***/ "../../../../../src/app/components/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<nav class=\"navbar fixed-bottom navbar-light bg-light\">\n    <a class=\"navbar-brand logo\" href=\"#\">Coach<span>Shark</span></a>\n    <a><i class=\"fa fa-linkedin-square fa-3x\" aria-hidden=\"true\"></i>\n        <i class=\"fa fa-facebook-square fa-3x\" aria-hidden=\"true\"></i>\n        <i class=\"fa fa-twitter-square fa-3x\" aria-hidden=\"true\"></i>\n      </a>\n  </nav>"
+module.exports = "\n<nav class=\"navbar fixed-bottom navbar-light bg-light\">\n    <a class=\"navbar-brand logo\" href=\"#\">Coach<span>Shark</span></a>\n    <a><i class=\"fa fa-linkedin-square fa-3x\" (click) = \"socialMedia('https://www.linkedin.com/company/coach.shark/')\"  aria-hidden=\"true\"></i>\n        <i class=\"fa fa-facebook-square fa-3x\" (click) = \"socialMedia('https://fb.me/coachshark')\" aria-hidden=\"true\"></i>\n        <i class=\"fa fa-twitter-square fa-3x\" (click) = \"socialMedia('https://twitter.com/coachshark_com')\" aria-hidden=\"true\"></i>\n      </a>\n  </nav>"
 
 /***/ }),
 
@@ -165,7 +165,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".logo {\n  font: normal 36px 'Cookie', cursive;\n  font-size: 45px;\n  font-weight: 600; }\n  .logo span {\n    color: #5383d3; }\n", ""]);
+exports.push([module.i, ".logo {\n  font: normal 36px 'Cookie', cursive;\n  font-size: 45px;\n  font-weight: 600; }\n  .logo span {\n    color: #5383d3; }\n\n.fa-facebook-square {\n  color: #3B5998;\n  cursor: pointer; }\n\n.fa-linkedin-square {\n  color: #007bb6;\n  cursor: pointer; }\n\n.fa-twitter-square {\n  color: #0084b4;\n  cursor: pointer; }\n", ""]);
 
 // exports
 
@@ -195,6 +195,9 @@ var FooterComponent = (function () {
     function FooterComponent() {
     }
     FooterComponent.prototype.ngOnInit = function () {
+    };
+    FooterComponent.prototype.socialMedia = function (socialUrl) {
+        window.open(socialUrl, '_blank');
     };
     return FooterComponent;
 }());
@@ -383,7 +386,7 @@ CatalogModule = __decorate([
 /***/ "../../../../../src/app/pages/catalog/course-list/course-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"course-list-container\">\n<div class=\"card text-center course\">\n    <div class=\"card-header\">\n      Tree\n    </div>\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">Divide and Conquer</h4>\n      <p class=\"card-text\">Learn divide and conquer algorithmic paradigm easily</p>\n      <a routerLink=\"/course-detail/1/0/0\" class=\"btn btn-primary\">View videos</a>\n    </div>\n    <div class=\"card-footer text-muted\">\n      1 video\n    </div>\n  </div>\n</div>"
+module.exports = "<div class = \"course-list-container\">\n<div class=\"card text-center course\">\n    <div class=\"card-header\">\n      Tree\n    </div>\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">Divide and Conquer</h4>\n      <p class=\"card-text\">Learn divide and conquer algorithmic paradigm easily</p>\n      <a routerLink=\"/course-detail/1/0/0\" class=\"btn btn-primary\">View videos</a>\n    </div>\n    <div class=\"card-footer text-muted\">\n      2 videos\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -505,7 +508,7 @@ SideMenuComponent = __decorate([
 /***/ "../../../../../src/app/pages/course-detail/course-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"ls-pages course-detail-page\">\n<div class= \"row\">\n  <div class = \"col-sm-3\">\n    <app-ls-section-list [currentSection] = \"sectionId\" [currentVideo] = \"videoId\"></app-ls-section-list>\n  </div>\n  <div class = \"col-sm-8\">\n      <iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/L_TSTo6Dtbo?rel=0\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>\n      </div>\n</div>\n</div>"
+module.exports = "<div class = \"ls-pages course-detail-page\">\n<div class= \"row\">\n  <div class = \"col-sm-3\">\n    <app-ls-section-list [currentSection] = \"sectionId\" [currentVideo] = \"videoId\"></app-ls-section-list>\n  </div>\n  <div class = \"col-sm-8\">\n      <iframe *ngIf = \"videoId === '0'\"  width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/L_TSTo6Dtbo?rel=0\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>\n      <iframe *ngIf = \"videoId === '1'\"  width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/X0mVZC_tojo?rel=0\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>  \n    </div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -622,7 +625,7 @@ CourseDetailModule = __decorate([
 /***/ "../../../../../src/app/pages/course-detail/section-list/section-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"list-group pointer-cursor\">\n    <li class=\"list-group-item ls-list-active\">Divide and Conquer </li>\n            <li class=\"list-group-item\" [class.ls-list--item--active] = \"currentVideo === '0'\"  routerLink=\"/course-detail/1/0/0\" >Introduction</li>\n  </ul>\n\n\n"
+module.exports = "<ul class=\"list-group pointer-cursor\">\n    <li class=\"list-group-item ls-list-active\">Divide and Conquer </li>\n            <li class=\"list-group-item\" [class.ls-list--item--active] = \"currentVideo === '0'\"  routerLink=\"/course-detail/1/0/0\" >Introduction</li>\n            <li class=\"list-group-item\" [class.ls-list--item--active] = \"currentVideo === '1'\"  routerLink=\"/course-detail/1/0/1\" >Merge Sort</li>\n  </ul>\n\n\n"
 
 /***/ }),
 
