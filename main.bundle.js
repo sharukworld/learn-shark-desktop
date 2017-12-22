@@ -32,7 +32,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "::ng-deep .ls--logo {\n  width: 55px; }\n\n::ng-deep .display-center-flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n::ng-deep .padding--0 {\n  padding: 0px; }\n\n::ng-deep .ls-pages {\n  margin-top: 82px;\n  margin: 97px; }\n\n::ng-deep .border-none {\n  border: none; }\n\n::ng-deep .ls-list-active {\n  background-color: #f0f8ff; }\n\n::ng-deep .pointer-cursor {\n  cursor: pointer; }\n\n::ng-deep .ls-list--item--active {\n  background-color: #6f86c6;\n  z-index: 2;\n  color: #fff;\n  border-color: #6f86c6; }\n\n::ng-deep .list-group-item {\n  outline: none; }\n", ""]);
+exports.push([module.i, "::ng-deep .ls--logo {\n  width: 55px; }\n\n::ng-deep .display-center-flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n::ng-deep .padding--0 {\n  padding: 0px; }\n\n::ng-deep .ls-pages {\n  margin-top: 82px;\n  margin: 97px; }\n\n::ng-deep .border-none {\n  border: none; }\n\n::ng-deep .ls-list-active {\n  background-color: #f0f8ff; }\n\n::ng-deep .pointer-cursor {\n  cursor: pointer; }\n\n::ng-deep .ls-list--item--active {\n  background-color: #6f86c6;\n  z-index: 2;\n  color: #fff;\n  border-color: #6f86c6; }\n\n::ng-deep .list-group-item {\n  outline: none; }\n\n::ng-deep .margin--20 {\n  margin: 20px; }\n", ""]);
 
 // exports
 
@@ -278,7 +278,7 @@ HeaderComponent = __decorate([
 /***/ "../../../../../src/app/pages/catalog/catalog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"ls-pages catalog-page\">\n<div class=\"row\">\n  <div class=\"col-sm-3\">\n    <app-ls-side-menu></app-ls-side-menu>\n  </div>\n<div class=\"col-sm-7\">\n    <app-ls-course-list></app-ls-course-list>\n</div>\n</div>\n</div>"
+module.exports = "<div class = \"ls-pages catalog-page\">\n<div class=\"row\">\n  <div class=\"col-sm-3\">\n    <app-ls-side-menu ></app-ls-side-menu>\n  </div>\n<div class=\"col-sm-7\">\n    <app-ls-course-list></app-ls-course-list>\n</div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -386,7 +386,7 @@ CatalogModule = __decorate([
 /***/ "../../../../../src/app/pages/catalog/course-list/course-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"course-list-container\">\n<div class=\"card text-center course\">\n    <div class=\"card-header\">\n      Tree\n    </div>\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">Divide and Conquer</h4>\n      <p class=\"card-text\">Learn divide and conquer algorithmic paradigm easily</p>\n      <a routerLink=\"/course-detail/1/0/0\" class=\"btn btn-primary\">View videos</a>\n    </div>\n    <div class=\"card-footer text-muted\">\n      2 videos\n    </div>\n  </div>\n</div>"
+module.exports = "<div class = \"course-list-container\">\n  <div class=\"card text-center course\" *ngFor = \"let course of currentCourseList\">\n    <div class=\"card-header\">\n     {{course.courseParent}}\n    </div>\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">{{course.title}}</h4>\n      <p class=\"card-text\">{{course.courseDescription}}</p>\n      <a [routerLink]=\"course.courseLink\" class=\"btn btn-primary\">View videos</a>\n    </div>\n    <div class=\"card-footer text-muted\">\n      {{course.numberOfVideos}} videos\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -413,7 +413,8 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourseListComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mock_data_mock_json__ = __webpack_require__("../../../../../src/app/pages/catalog/mock-data/mock-json.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -424,15 +425,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var CourseListComponent = (function () {
     function CourseListComponent() {
+        this.currentCourseList = __WEBPACK_IMPORTED_MODULE_0__mock_data_mock_json__["a" /* algorithm */];
     }
     CourseListComponent.prototype.ngOnInit = function () {
     };
     return CourseListComponent;
 }());
 CourseListComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* Component */])({
         selector: 'app-ls-course-list',
         template: __webpack_require__("../../../../../src/app/pages/catalog/course-list/course-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/catalog/course-list/course-list.component.scss")]
@@ -444,10 +447,28 @@ CourseListComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/pages/catalog/mock-data/mock-json.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return algorithm; });
+var algorithm = [
+    {
+        title: 'Divide and Conquer',
+        courseDescription: 'Learn divide and conquer algorithmic paradigm easily',
+        courseLink: '/course-detail/1/0/0',
+        numberOfVideos: 2,
+        courseParent: 'Algorithm'
+    }
+];
+//# sourceMappingURL=mock-json.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/pages/catalog/side-menu/side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "    <div class=\"card side-menu\">\n        <div class=\"card-block\">\n          <h4 class=\"card-title text--pading\">Courses</h4>\n        </div>\n        <ul class=\"list-group list-group-flush\">\n          <li class=\"list-group-item\">Algorithm</li>\n        </ul>\n      </div>"
+module.exports = "      <ul class=\"list-group\">\n        <li class=\"list-group-item ls-list-active\">Courses </li>\n                <li class=\"list-group-item pointer-cursor\" [class.ls-list--item--active] = \"currentCourse === 0\"  routerLink=\"/course-detail/1/0/0\"  >Algorithm</li>\n                <!-- <li class=\"list-group-item\" [class.ls-list--item--active] = \"currentVideo === 1\"  >Design Patterns</li> -->\n      </ul>\n    "
 
 /***/ }),
 
@@ -487,11 +508,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var SideMenuComponent = (function () {
     function SideMenuComponent() {
+        this.currentCourse = 0;
     }
     SideMenuComponent.prototype.ngOnInit = function () {
     };
     return SideMenuComponent;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], SideMenuComponent.prototype, "currentCourse", void 0);
 SideMenuComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-ls-side-menu',
@@ -508,7 +534,7 @@ SideMenuComponent = __decorate([
 /***/ "../../../../../src/app/pages/course-detail/course-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class = \"ls-pages course-detail-page\">\n<div class= \"row\">\n  <div class = \"col-sm-3\">\n    <app-ls-section-list [currentSection] = \"sectionId\" [currentVideo] = \"videoId\"></app-ls-section-list>\n  </div>\n  <div class = \"col-sm-8\">\n      <iframe *ngIf = \"videoId === '0'\"  width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/L_TSTo6Dtbo?rel=0\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>\n      <iframe *ngIf = \"videoId === '1'\"  width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/X0mVZC_tojo?rel=0\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>  \n    </div>\n</div>\n</div>"
+module.exports = "<div class = \"ls-pages course-detail-page\">\n<div class= \"row\">\n  <div class = \"col-sm-3\">\n    <app-ls-section-list [currentSection] = \"sectionId\" [currentVideo] = \"videoId\"></app-ls-section-list>\n  </div>\n  <div class = \"col-sm-7 margin--20\">\n      <iframe *ngIf = \"videoId === '0'\"  width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/L_TSTo6Dtbo?rel=0\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>\n      <iframe *ngIf = \"videoId === '1'\"  width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/X0mVZC_tojo?rel=0\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>  \n    </div>\n</div>\n</div>"
 
 /***/ }),
 
@@ -625,7 +651,7 @@ CourseDetailModule = __decorate([
 /***/ "../../../../../src/app/pages/course-detail/section-list/section-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"list-group pointer-cursor\">\n    <li class=\"list-group-item ls-list-active\">Divide and Conquer </li>\n            <li class=\"list-group-item\" [class.ls-list--item--active] = \"currentVideo === '0'\"  routerLink=\"/course-detail/1/0/0\" >Introduction</li>\n            <li class=\"list-group-item\" [class.ls-list--item--active] = \"currentVideo === '1'\"  routerLink=\"/course-detail/1/0/1\" >Merge Sort</li>\n  </ul>\n\n\n"
+module.exports = "<ul class=\"list-group\">\n    <li class=\"list-group-item ls-list-active\">Divide and Conquer </li>\n            <li class=\"list-group-item pointer-cursor\" [class.ls-list--item--active] = \"currentVideo === '0'\"  routerLink=\"/course-detail/1/0/0\"  >Introduction</li>\n            <li class=\"list-group-item pointer-cursor\" [class.ls-list--item--active] = \"currentVideo === '1'\"  routerLink=\"/course-detail/1/0/1\" >Merge Sort</li>\n  </ul>\n\n\n"
 
 /***/ }),
 
@@ -637,7 +663,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".testing {\n  position: relative;\n  left: -250px; }\n\n@-webkit-keyframes pulse {\n  from {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); }\n  50% {\n    -webkit-transform: scale3d(1.05, 1.05, 1.05);\n            transform: scale3d(1.05, 1.05, 1.05); }\n  to {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); } }\n\n@keyframes pulse {\n  from {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); }\n  50% {\n    -webkit-transform: scale3d(1.05, 1.05, 1.05);\n            transform: scale3d(1.05, 1.05, 1.05); }\n  to {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); } }\n\n.pulse {\n  -webkit-animation-name: pulse;\n          animation-name: pulse; }\n", ""]);
+exports.push([module.i, "@-webkit-keyframes pulse {\n  from {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); }\n  50% {\n    -webkit-transform: scale3d(1.05, 1.05, 1.05);\n            transform: scale3d(1.05, 1.05, 1.05); }\n  to {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); } }\n\n@keyframes pulse {\n  from {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); }\n  50% {\n    -webkit-transform: scale3d(1.05, 1.05, 1.05);\n            transform: scale3d(1.05, 1.05, 1.05); }\n  to {\n    -webkit-transform: scale3d(1, 1, 1);\n            transform: scale3d(1, 1, 1); } }\n\n.pulse {\n  -webkit-animation-name: pulse;\n          animation-name: pulse; }\n", ""]);
 
 // exports
 
@@ -674,21 +700,6 @@ var SectionListComponent = (function () {
     }
     SectionListComponent.prototype.ngOnInit = function () {
     };
-    // animate( currentEle) {
-    //   setTimeout( () => {
-    //     anime({
-    //       targets: '.' + currentEle,
-    //       scale: 1.1,
-    //       direction: 'alternate',
-    //       duration: 500,
-    //       loop: 2,
-    //       backgroundColor: ['white', 'black'],
-    //       elasticity: function(el, i, l) {
-    //         return (200 + i * 200);
-    //       }
-    //     });
-    //   }, 0);
-    // }
     SectionListComponent.prototype.toogleCurrentView = function () {
         var _this = this;
         if (this.show) {
